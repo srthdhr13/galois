@@ -1,6 +1,6 @@
 # Galois 
 
-Galois Field ($GF(2^8)$) Arithmetic Unit 
+Galois Field $GF(2^8)$ Arithmetic Unit 
 
 ## Finite Field / Galois Field 
 
