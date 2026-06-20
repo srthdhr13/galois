@@ -62,10 +62,10 @@ Since our field has 256 elements , our multiplicative group will have 255 elemen
 
 $a^{255} = 1$ where $a \in GF(2^8)$ and $a \neq 0$
 
-$a \cdot a^{254} = 1$
+$$a \cdot a^{254} = 1$$
 
 
-$a^{-1} = a^{254}$
+$$a^{-1} = a^{254}$$
 
 
 
