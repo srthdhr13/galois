@@ -1,5 +1,5 @@
-# Galois
-Galois Field (GF(2^8)) Arithmetic Unit 
+
+# Galois Field ($GF(2^8)$) Arithmetic Unit 
 
 ## Finite Field / Galois Field 
 
@@ -22,27 +22,27 @@ GF(2) has only two elements {0,1} which makes it easy for computation, while hav
 
 For some field $GF(p^m)$ the arithmetic operations are done as follows :
 
-1. $a + b \equiv c \p mod p$ 
-2. $a - b \equiv c \p mod p$
-3. $a \cdot b \equiv c \p  mod p$
-4. $a \cdot a^{-1} \equiv 1 \p mod p$
+1. $a + b \equiv c \pmod{p}$ 
+2. $a - b \equiv c \pmod{p}$
+3. $a \cdot b \equiv c \pmod{p}$
+4. $a \cdot a^{-1} \equiv 1 \pmod{p}$
 
 But in the case of $GF(2^8)$ the elements in the field are not regular numbers but polynomials of the form $ax^7 + bx^6 + cx^5 + dx^4 + ex^3 + fx^2 + gx + h$ , where $a,b,c,d,e,f,g,h \in GF(2)$.
 
 #### 1. Addition and Subtraction 
 
-Consider two elements $A(x)$ and $B(x)$ , the addition and subtraction operations are done same as regular polynomial addition and subtraction , where each corresponding coefficients are added / subtracted and then reduced by $\p mod 2$. In the case of $GF(2^8)$ adding or subtracting coefficients results only in 0 or 1 , for this field the addition and subtraction give the same result. 
+Consider two elements $A(x)$ and $B(x)$ , the addition and subtraction operations are done same as regular polynomial addition and subtraction , where each corresponding coefficients are added / subtracted and then reduced by $mod 2$. In the case of $GF(2^8)$ adding or subtracting coefficients results only in 0 or 1 , for this field the addition and subtraction give the same result. 
 Since the resultant coefficients are reduced by $mod 2$ , we get resultant coefficient as 1 only when exactly one coefficient is 1. Hence the addition/subtraction operation is essentially a XOR.
 
-$A(x) + B(x) \equiv C(x) \p mod 2$
+$A(x) + B(x) \equiv C(x) \pmod 2$
 
 #### 2. Multiplication 
 
-In the case of regular numbers the multiplication is done normally and then the result is reduced by $\p mod p$ , but in the case of $GF(2^8)$ all the elements are polynomials so they are reduced by using 
+In the case of regular numbers the multiplication is done normally and then the result is reduced by $mod p$ , but in the case of $GF(2^8)$ all the elements are polynomials so they are reduced by using 
 $mod P(x)$ , where $P(x)$ is an irreducible polynomial.
 For AES the irreducible polynomial used is $P(x) = x^8 + x^4 + x^3 + x + 1$
 
-$A(x) \cdot B(x) \equiv C(x) \p mod P(x)$
+$A(x) \cdot B(x) \equiv C(x) \pmod{P(x)}$
 
 This can be implemented by shifting bits and XORing them.
 
